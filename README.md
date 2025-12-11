@@ -4,6 +4,8 @@ A Hammerspoon script that fixes macOS Cmd+Tab behavior - apps always unhide when
 
 ## The Problem
 
+![Demo](demo.gif)
+
 On macOS, when you Cmd+Tab to a hidden app, it often doesn't appear. You have to:
 - Press Cmd+Option while releasing Tab, or
 - Click the app in the dock
