@@ -29,3 +29,12 @@ local appWatcher = hs.application.watcher.new(function(appName, eventType, appOb
     end
 end)
 appWatcher:start()
+
+-- Restart appWatcher after wake from sleep (in case it stops)
+local sleepWatcher = hs.caffeinate.watcher.new(function(event)
+    if event == hs.caffeinate.watcher.systemDidWake then
+        appWatcher:stop()
+        appWatcher:start()
+    end
+end)
+sleepWatcher:start()
